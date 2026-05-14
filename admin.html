@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Owner Dashboard | Aarogya Meridian Hospital</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="admin.css" />
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  </head>
+  <body class="admin-body">
+    <main class="admin-shell">
+      <section class="admin-hero">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">AM</span>
+          <span>
+            <strong>Aarogya Meridian</strong>
+            <small>Owner dashboard</small>
+          </span>
+        </a>
+        <div>
+          <p class="eyebrow">Admin control</p>
+          <h1>Appointment Dashboard</h1>
+          <p>Simple API-based owner view for registrations, bookings, and submitted appointment data.</p>
+        </div>
+      </section>
+
+      <section class="admin-stats" aria-label="Admin stats">
+        <article class="stat-card">
+          <span>Total Registered Users</span>
+          <strong data-admin-users>0</strong>
+          <small>Unique patient phone numbers</small>
+        </article>
+        <article class="stat-card">
+          <span>Total Appointments</span>
+          <strong data-admin-appointments>0</strong>
+          <small>Submitted website bookings</small>
+        </article>
+      </section>
+
+      <section class="admin-table-wrap">
+        <div class="table-heading">
+          <div>
+            <p class="eyebrow">Submitted data</p>
+            <h2>All appointment requests</h2>
+          </div>
+          <button class="primary-btn" type="button" data-refresh>Refresh</button>
+        </div>
+        <p class="admin-status" data-admin-status></p>
+        <div class="table-scroll">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Appointment Date</th>
+                <th>Date of Birth</th>
+                <th>Doctor</th>
+                <th>Submitted</th>
+              </tr>
+            </thead>
+            <tbody data-appointments-table></tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
