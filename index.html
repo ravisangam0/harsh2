@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Aarogya Meridian Hospital - premium multi-speciality healthcare with emergency care, expert doctors, diagnostics, ICU, and appointment booking."
+    />
+    <title>Aarogya Meridian Hospital</title>
+    <link rel="preconnect" href="https://images.unsplash.com" />
+    <link rel="preconnect" href="https://unpkg.com" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+  </head>
+  <body>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="Aarogya Meridian Hospital home">
+        <span class="brand-mark">AM</span>
+        <span>
+          <strong>Aarogya Meridian</strong>
+          <small>Super Speciality Hospital</small>
+        </span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open navigation" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="main-nav" data-nav>
+        <a href="#doctors">Doctors</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#location">Location</a>
+        <a class="nav-cta" href="#appointment" data-open-appointment>Book Appointment</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <div class="hero-media" role="img" aria-label="Modern hospital reception and medical team"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+          <p class="eyebrow">24/7 emergency care and specialist consultations</p>
+          <h1>Aarogya Meridian Hospital</h1>
+          <p class="hero-copy">
+            Premium, patient-first healthcare delivered by trusted specialists, advanced diagnostics, and rapid emergency response.
+          </p>
+          <div class="hero-actions">
+            <button class="primary-btn" type="button" data-open-appointment>Book Appointment</button>
+            <a class="secondary-btn" href="tel:+919876543210">Call Emergency</a>
+          </div>
+        </div>
+        <div class="hero-panel">
+          <span>Avg. response</span>
+          <strong>08 min</strong>
+          <small>Emergency triage desk</small>
+        </div>
+      </section>
+
+      <section class="section doctors-section reveal" id="doctors">
+        <div class="section-heading">
+          <p class="eyebrow">Meet our specialists</p>
+          <h2>Doctors trusted by families and critical-care teams</h2>
+          <p>
+            Consult senior physicians across chest care, internal medicine, emergency medicine, cardiology, and pediatrics.
+          </p>
+        </div>
+        <div class="doctor-grid" data-doctor-grid></div>
+      </section>
+
+      <section class="section about-section reveal" id="about">
+        <div class="about-visual">
+          <img
+            src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1100&q=80"
+            alt="Hospital care team in a modern corridor"
+            loading="lazy"
+          />
+          <div class="about-badge">
+            <strong>98.7%</strong>
+            <span>Patient satisfaction score</span>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="eyebrow">About the hospital</p>
+          <h2>Modern infrastructure with warm, accountable care</h2>
+          <p>
+            Aarogya Meridian Hospital is a private multi-speciality center built for reliable diagnosis, quick clinical decisions,
+            and comfortable recovery. Our doctors, nurses, and coordinators work as one team so patients receive clear guidance
+            from admission to discharge.
+          </p>
+          <div class="highlight-grid">
+            <div>
+              <strong>ICU</strong>
+              <span>Advanced monitoring and ventilator support</span>
+            </div>
+            <div>
+              <strong>Emergency</strong>
+              <span>Round-the-clock triage and ambulance support</span>
+            </div>
+            <div>
+              <strong>Diagnostics</strong>
+              <span>Fast pathology, X-ray, ECG, and imaging coordination</span>
+            </div>
+            <div>
+              <strong>Pharmacy</strong>
+              <span>In-house medicine access for admitted patients</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section services-section reveal" id="services">
+        <div class="section-heading">
+          <p class="eyebrow">Care departments</p>
+          <h2>Complete services for everyday and urgent health needs</h2>
+        </div>
+        <div class="service-grid">
+          <article class="service-card">
+            <span class="service-icon">+</span>
+            <h3>Chest Care</h3>
+            <p>Asthma, COPD, respiratory infections, oxygen support, and pulmonary consultation.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon">GP</span>
+            <h3>General Physician</h3>
+            <p>Fever, diabetes, hypertension, infections, preventive care, and chronic disease follow-up.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon">ER</span>
+            <h3>Emergency Care</h3>
+            <p>24/7 emergency room, trauma stabilization, cardiac triage, and ambulance coordination.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon">IC</span>
+            <h3>Critical Care ICU</h3>
+            <p>High-dependency monitoring, ventilator care, infusion support, and specialist rounds.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon">CD</span>
+            <h3>Cardiology</h3>
+            <p>ECG, hypertension care, chest pain evaluation, and preventive heart health programs.</p>
+          </article>
+          <article class="service-card">
+            <span class="service-icon">LB</span>
+            <h3>Lab & Diagnostics</h3>
+            <p>Pathology, radiology coordination, health packages, and same-day report assistance.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="stats-section reveal" aria-label="Live hospital statistics">
+        <div class="stat-card">
+          <span>Total Patients Served</span>
+          <strong data-counter="patients">0</strong>
+          <small>Updated from hospital records</small>
+        </div>
+        <div class="stat-card">
+          <span>Total Appointments Booked</span>
+          <strong data-counter="appointments">0</strong>
+          <small>Live appointment counter</small>
+        </div>
+        <div class="stat-card">
+          <span>Specialist Doctors</span>
+          <strong data-counter-static="18">0</strong>
+          <small>Across major departments</small>
+        </div>
+      </section>
+
+      <section class="section location-section reveal" id="location">
+        <div class="location-copy">
+          <p class="eyebrow">Visit us</p>
+          <h2>Easy access from the city center</h2>
+          <p>
+            Aarogya Meridian Hospital, Sector 21, Civil Lines, New Delhi, India 110054.
+          </p>
+          <div class="contact-actions">
+            <a class="contact-btn" href="tel:+919876543210">Call</a>
+            <a class="contact-btn" href="mailto:care@aarogyameridian.com">Email</a>
+            <a class="contact-btn whatsapp" href="https://wa.me/919876543210?text=Hello%20Aarogya%20Meridian%20Hospital%2C%20I%20want%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp</a>
+          </div>
+        </div>
+        <a
+          class="map-wrap"
+          href="https://www.google.com/maps/search/?api=1&query=Aarogya%20Meridian%20Hospital%20Sector%2021%20Civil%20Lines%20New%20Delhi"
+          target="_blank"
+          rel="noopener"
+          aria-label="Open hospital location in Google Maps"
+        >
+          <iframe
+            title="Aarogya Meridian Hospital location map"
+            src="https://www.google.com/maps?q=New%20Delhi%20Hospital&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="#home">
+          <span class="brand-mark">AM</span>
+          <span>
+            <strong>Aarogya Meridian</strong>
+            <small>Super Speciality Hospital</small>
+          </span>
+        </a>
+        <p>Premium multi-speciality healthcare with emergency care, diagnostics, ICU, and family medicine under one roof.</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#doctors">Doctors</a>
+        <a href="#about">About Hospital</a>
+        <a href="#services">Services</a>
+        <a href="admin.html">Owner Dashboard</a>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <p>Aarogya Meridian Hospital, Sector 21, Civil Lines, New Delhi 110054</p>
+        <a href="tel:+919876543210">+91 98765 43210</a>
+        <a href="mailto:care@aarogyameridian.com">care@aarogyameridian.com</a>
+      </div>
+    </footer>
+
+    <div class="modal-backdrop" data-modal aria-hidden="true">
+      <section class="appointment-modal" role="dialog" aria-modal="true" aria-labelledby="appointment-title" id="appointment">
+        <button class="modal-close" type="button" aria-label="Close appointment form" data-close-modal>&times;</button>
+        <p class="eyebrow">Priority appointment desk</p>
+        <h2 id="appointment-title">Book an appointment</h2>
+        <p class="modal-intro">Submit your details and our desk will receive the booking on WhatsApp instantly.</p>
+        <form class="appointment-form" data-appointment-form>
+          <label>
+            Name
+            <input type="text" name="name" placeholder="Your full name" required />
+          </label>
+          <label>
+            Phone Number
+            <input type="tel" name="phone" placeholder="+91 98765 43210" required />
+          </label>
+          <label>
+            Date of Appointment
+            <input type="date" name="appointmentDate" required />
+          </label>
+          <label>
+            Date of Birth
+            <input type="date" name="dateOfBirth" required />
+          </label>
+          <label>
+            Select Doctor
+            <select name="doctor" required data-doctor-select>
+              <option value="">Choose a doctor</option>
+            </select>
+          </label>
+          <p class="form-status" data-form-status></p>
+          <button class="primary-btn full-btn" type="submit">Submit & Open WhatsApp</button>
+        </form>
+      </section>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
